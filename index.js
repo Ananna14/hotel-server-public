@@ -1,11 +1,19 @@
 const express = require('express')
+const cors = require('cors');
+const app = express()
+
+//net
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*")
+// }) 
+
 const { MongoClient } = require('mongodb');
 const ObjectId = require('mongodb').ObjectId;
 
-const cors = require('cors');
+
 require('dotenv').config();
 
-const app = express()
+
 const port =process.env.PORT || 5000
 
 //middleware
