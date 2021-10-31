@@ -47,6 +47,12 @@ async function run() {
        res.json(service);
       })
       
+      app.get("/services/:email", async (req, res) =>{
+        const email = req.params.email;
+        const cursor = servicesCollection.find({email:email});
+        const myPackages = await cursor.toArray();
+        res.json(myPackages);
+      })
       
       //POST API
     app.post('/services', async(req, res)=>{
